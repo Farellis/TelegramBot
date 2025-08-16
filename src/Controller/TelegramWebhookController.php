@@ -2,25 +2,14 @@
 namespace App\Controller;
 
 use App\Repository\UserRepository;
-use App\Repository\WalletRepository;
-use App\Repository\TokenRepository;
 use App\Repository\BufferRepository;
-use App\Repository\PositionRepository;
 use App\Repository\TradeRepository;
-use App\Service\AddressService;
-use App\Service\EncryptService;
 use App\Service\UserService;
-use App\Service\WalletService;
 use App\Service\DepositWalletService;
-use App\Service\TokenService;
-use App\Service\TradingService;
 use App\Service\TelegramService;
 use App\Entity\Buffer;
 use App\Entity\User;
 use App\Entity\DepositWallet;
-use App\Entity\Position;
-use App\Entity\Wallet;
-use App\Entity\Token;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
@@ -30,8 +19,6 @@ use Doctrine\ORM\EntityManagerInterface;
 use Psr\Log\LoggerInterface;
 use Telegram\Bot\Keyboard\Keyboard;
 use ICanBoogie\Inflector;
-use Tighten\SolanaPhpSdk\Keypair;
-use StephenHill\Base58;
 
 class TelegramWebhookController extends AbstractController
 {
